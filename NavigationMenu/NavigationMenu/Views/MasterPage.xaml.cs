@@ -10,7 +10,8 @@ namespace NavigationMenu.Views
 		public MasterPage()
 		{
 			InitializeComponent();
-			BindingContext = new MasterViewModel();
-		}
+            BindingContext = new MasterViewModel();
+
+        }
 	}
 }

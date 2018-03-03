@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.6.2" />
+    <PackageReference Include="Autofac.Extras.CommonServiceLocator" Version="5.0.0" />
     <PackageReference Include="Xam.Plugin.Iconize" Version="2.0.0.37-beta" />
     <PackageReference Include="Xam.Plugin.Iconize.FontAwesome" Version="2.0.0.37-beta" />
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.280555" />

@@ -23,7 +23,7 @@ namespace NavigationMenu.Extensions
             var translation = temp.GetString(Text);
             if (translation == null)
             {
-				translation = Text; // HACK: returns the key, which GETS DISPLAYED TO THE USER
+				translation = Text; // HACK: Returns the key, which GETS DISPLAYED TO THE USER
             }
             return translation;
         }

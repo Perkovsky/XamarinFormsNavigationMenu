@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 using Xamarin.Forms;
+using CommonServiceLocator;
 
 namespace NavigationMenu.ViewModels
 {
@@ -12,11 +13,13 @@ namespace NavigationMenu.ViewModels
             {
                 return new Command((value) =>
                 {
-                    // COMMENT: This is just quick demo code. Please don't put this in a production app.
-                    var mdp = (Application.Current.MainPage as MasterDetailPage);
+                    //NOTE: This is just quick demo code. Please don't put this in a production app
+                    //var mdp = (Application.Current.MainPage as MasterDetailPage);
+
+                    var mdp = ServiceLocator.Current.GetInstance<MasterDetailPage>();
                     var navPage = mdp.Detail as NavigationPage;
 
-                    // hide the Master Page
+                    // hide the Master Detail Page
                     mdp.IsPresented = false;
 
                     navPage.PushAsync((Page)Activator.CreateInstance(value as Type));
