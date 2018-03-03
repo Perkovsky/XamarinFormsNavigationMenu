@@ -1,4 +1,4 @@
-﻿using NavigationMenu.Views;
+﻿using System;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -16,25 +16,10 @@ namespace NavigationMenu.ViewModels
                     var mdp = (Application.Current.MainPage as MasterDetailPage);
                     var navPage = mdp.Detail as NavigationPage;
 
-                    // Hide the Master page
+                    // hide the Master Page
                     mdp.IsPresented = false;
 
-                    switch (value)
-                    {
-                        case "1":
-                            navPage.PushAsync(new MainPage());
-                            break;
-                        case "2":
-                            navPage.PushAsync(new ContactsPage());
-                            break;
-                        case "3":
-                            navPage.PushAsync(new InfoPage());
-                            break;
-                        case "4":
-                            navPage.PushAsync(new SettingsPage());
-                            break;
-                    }
-
+                    navPage.PushAsync((Page)Activator.CreateInstance(value as Type));
                 });
             }
         }

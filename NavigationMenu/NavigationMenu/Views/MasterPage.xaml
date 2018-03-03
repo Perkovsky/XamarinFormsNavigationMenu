@@ -5,25 +5,22 @@
 			 xmlns:extns="clr-namespace:NavigationMenu.Extensions"
              x:Class="NavigationMenu.Views.MasterPage"
              Title="Stozhary">
-	<ContentPage.Content>
-		<Grid BackgroundColor="Transparent">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="200" />
-				<RowDefinition Height="*" />
-			</Grid.RowDefinitions>
+    <ContentPage.Content>
+        <Grid BackgroundColor="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
             <Grid BackgroundColor="{StaticResource Primary}">
-                <Image Source="logo.png" Aspect="AspectFill" />
-				<!--<StackLayout Padding="0,20,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-					<Label Text="Adam Pedley" TextColor="White" FontSize="Large" />
-				</StackLayout>-->
-			</Grid>
-			<StackLayout Margin="10,20,10,0" Grid.Row="1" Spacing="15">
-                <local:NavigationItem Text="{extns:Translate MainPage}" Icon="fa-home" Command="{Binding NavigationCommand}" CommandParameter="1" />
-                <local:NavigationItem Text="{extns:Translate ContactsPage}" Icon="fa-at" Command="{Binding NavigationCommand}" CommandParameter="2" />
-                <local:NavigationItem Text="{extns:Translate InfoPage}" Icon="fa-info-circle" Command="{Binding NavigationCommand}" CommandParameter="3" />
+                <Image Source="logo.png" Aspect="AspectFit" />
+            </Grid>
+            <StackLayout Margin="0,20,0,0" Grid.Row="1" Spacing="15">
+                <local:MasterPageItem Text="{extns:Translate MainPage}" Icon="fa-home" TargetType="{x:Type local:MainPage}" />
+                <local:MasterPageItem Text="{extns:Translate ContactsPage}" Icon="fa-at" TargetType="{x:Type local:ContactsPage}" />
+                <local:MasterPageItem Text="{extns:Translate InfoPage}" Icon="fa-info-circle" TargetType="{x:Type local:InfoPage}" />
                 <ContentView HeightRequest="1" BackgroundColor="{StaticResource LightTextColor}" />
-                <local:NavigationItem Text="{extns:Translate SettingPage}" Icon="fa-cog" Command="{Binding NavigationCommand}" CommandParameter="4" />
-			</StackLayout>
-		</Grid>
-	</ContentPage.Content>
+                <local:MasterPageItem Text="{extns:Translate SettingsPage}" Icon="fa-cog" TargetType="{x:Type local:SettingsPage}" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>
