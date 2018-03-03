@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:local="clr-namespace:NavigationMenu.Views"
+			 xmlns:extns="clr-namespace:NavigationMenu.Extensions"
+             x:Class="NavigationMenu.Views.MasterPage"
+             Title="Stozhary">
+	<ContentPage.Content>
+		<Grid BackgroundColor="Transparent">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="200" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+            <Grid BackgroundColor="{StaticResource Primary}">
+                <Image Source="logo.png" Aspect="AspectFill" />
+				<!--<StackLayout Padding="0,20,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+					<Label Text="Adam Pedley" TextColor="White" FontSize="Large" />
+				</StackLayout>-->
+			</Grid>
+			<StackLayout Margin="10,20,10,0" Grid.Row="1" Spacing="15">
+                <local:NavigationItem Text="{extns:Translate MainPage}" Icon="fa-home" Command="{Binding NavigationCommand}" CommandParameter="1" />
+                <local:NavigationItem Text="{extns:Translate ContactsPage}" Icon="fa-at" Command="{Binding NavigationCommand}" CommandParameter="2" />
+                <local:NavigationItem Text="{extns:Translate InfoPage}" Icon="fa-info-circle" Command="{Binding NavigationCommand}" CommandParameter="3" />
+                <ContentView HeightRequest="1" BackgroundColor="{StaticResource LightTextColor}" />
+                <local:NavigationItem Text="{extns:Translate SettingPage}" Icon="fa-cog" Command="{Binding NavigationCommand}" CommandParameter="4" />
+			</StackLayout>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>
